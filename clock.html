@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');             @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@500&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            display:grid;
+   place-items: center;
+
+   height:100vh;
+   width:100vw;
+background-image: url("clock background.jpg");   
+background-repeat: no-repeat;
+background-size: cover;
+font-family: roboto;
+}
+.box{
+   /*  margin-top:5vh; */
+
+   display:grid;
+   place-items: center;
+font-size: 5vh;
+color:white;
+  
+
+}
+/* .box:hover{transform: skewY(190deg);
+    transition: 2s ease-in-out;
+
+ } */
+h1{
+font-size: 60px;
+color:rgb(237, 237, 237);
+text-align:center
+}
+
+
+.timer{
+    display:flex;
+    align-items: center;
+border:5px solid white;
+   padding:5px 5px;
+   border-radius: 10px;
+   text-align:center;
+   font-size:10vh ;
+}
+.timer h3{
+    margin:0 5px;
+ 
+}
+.timer h3:last-child{
+ color:rgb(183, 8, 84);
+    padding:5px;
+    border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="box" class="box"> <h1>Digital Clock</h1>
+   <div class="timer">
+        <h3 id="hh">Hour</h3>
+        <h3 id="mm">Minutes</h3>
+        <h3 id="ss">Seconds</h3>
+        </div>
+  </div>
+   
+<script>
+    setInterval(()=>{
+      let date = new Date();
+let hour = date.getHours()
+let min = date.getMinutes()
+let sec = date.getUTCSeconds()
+   document.getElementById("hh").innerHTML = hour+" : "
+   document.getElementById("mm").innerHTML = min+" : "
+   document.getElementById("ss").innerHTML = sec
+    })
+    //Extra
+setInterval(function(){
+let elm = document.getElementById("box")
+//elm.style.cssText ="transform: skewY(190deg);transition: 2s ease-in-out;"
+},1000)
+
+
+
+
+
+/* setInterval(function Timer(){
+const date = new Date()
+ //let a = document.getElementById("Date").innerHTML = date.toLocaleDateString()
+ let b = document.getElementById("timer").innerHTML = date.toLocaleTimeString()
+ 
+//console.log(a,b)
+},1000) */
+
+/* setInterval(function myTimer() {
+  const date = new Date();
+document.getElementById("timer").innerHTML = date.toLocaleTimeString();
+},1000) */
+
+
+</script>
+
+</body>
+</html>
